@@ -1,0 +1,151 @@
+TransactionID,0,1,2,3,4
+0,Leggings,Sneakers,T-shirt,Scarf,Bracelet
+1,Clutch,Sweatshirt,,,
+2,Hat,Clutch,Jacket,Scarf,
+3,Dress,Jacket,,,
+4,Skirt,Hoodie,,,
+5,T-shirt,Bracelet,,,
+6,Skirt,Clutch,Jacket,Sweatshirt,
+7,Clutch,Earrings,Leggings,Sweatshirt,
+8,Dress,,,,
+9,Hat,Sneakers,Hoodie,Scarf,
+10,Hoodie,Tank Top,Earrings,Bracelet,Shorts
+11,Heels,,,,
+12,Earrings,Tank Top,Sweatshirt,Hat,
+13,Tank Top,Heels,Earrings,Skirt,
+14,Jeans,Hoodie,Necklace,Leggings,Hat
+15,Jeans,Necklace,Skirt,,
+16,Leggings,Skirt,Jacket,,
+17,Skirt,,,,
+18,Heels,Scarf,,,
+19,Hoodie,Bracelet,Beanie,,
+20,Heels,,,,
+21,Necklace,Boots,T-shirt,Bracelet,
+22,Hat,Clutch,Hoodie,Shorts,Heels
+23,Sweatshirt,Jeans,Bracelet,Dress,
+24,Sneakers,Shorts,,,
+25,Dress,Hoodie,Sneakers,,
+26,Boots,Leggings,Dress,,
+27,Necklace,,,,
+28,Dress,Earrings,Leggings,,
+29,Shorts,T-shirt,Tank Top,Bracelet,
+30,T-shirt,,,,
+31,Hoodie,Beanie,Sweatshirt,Scarf,Bracelet
+32,Leggings,Skirt,Jeans,Scarf,Clutch
+33,T-shirt,Earrings,,,
+34,Shorts,Hoodie,,,
+35,Sneakers,Tank Top,Beanie,Scarf,
+36,Boots,Hoodie,Sweatshirt,Beanie,Shorts
+37,Beanie,Heels,Tank Top,Shorts,Sneakers
+38,Tank Top,,,,
+39,T-shirt,Heels,Clutch,Skirt,Tank Top
+40,Bracelet,,,,
+41,Sneakers,Hat,,,
+42,Sneakers,Earrings,Beanie,Heels,Scarf
+43,Tank Top,Skirt,Jeans,,
+44,Earrings,Bracelet,Jeans,,
+45,Clutch,Skirt,,,
+46,Heels,,,,
+47,Necklace,Jeans,Sweatshirt,Scarf,Shorts
+48,Tank Top,Bracelet,,,
+49,Hat,Boots,Bracelet,Necklace,Sneakers
+50,Boots,Clutch,Necklace,Jeans,Leggings
+51,Heels,Bracelet,Shorts,,
+52,Hoodie,,,,
+53,Bracelet,,,,
+54,T-shirt,Sneakers,Hat,Necklace,Earrings
+55,Beanie,Scarf,,,
+56,Jeans,Jacket,Bracelet,,
+57,Bracelet,,,,
+58,Bracelet,Dress,Clutch,,
+59,Hoodie,Earrings,Dress,,
+60,Sweatshirt,Boots,,,
+61,Tank Top,Leggings,,,
+62,Jacket,Jeans,Earrings,Dress,
+63,Dress,T-shirt,Heels,Jeans,
+64,Scarf,Jacket,Leggings,,
+65,Shorts,Clutch,,,
+66,Heels,Skirt,Hoodie,,
+67,Skirt,Heels,Dress,Jeans,Scarf
+68,Jeans,Earrings,Leggings,,
+69,Sweatshirt,Jacket,Sneakers,,
+70,Shorts,Dress,,,
+71,Clutch,Hat,Boots,Sneakers,Heels
+72,Earrings,,,,
+73,Bracelet,Tank Top,Hat,,
+74,Beanie,Jacket,Jeans,Bracelet,Hat
+75,Necklace,Sneakers,Leggings,Beanie,
+76,Tank Top,,,,
+77,Sneakers,Jeans,Shorts,,
+78,Sneakers,Clutch,T-shirt,Heels,
+79,Jeans,Earrings,Sneakers,Skirt,
+80,Earrings,Clutch,Sweatshirt,Necklace,Bracelet
+81,Dress,Heels,,,
+82,Necklace,Shorts,T-shirt,,
+83,Skirt,Earrings,,,
+84,Sneakers,,,,
+85,Sneakers,Leggings,,,
+86,Dress,Bracelet,,,
+87,Necklace,,,,
+88,Dress,Bracelet,Skirt,,
+89,Hoodie,Jeans,Beanie,Jacket,Shorts
+90,Shorts,Hat,Necklace,,
+91,T-shirt,Bracelet,Scarf,Dress,
+92,Boots,Clutch,,,
+93,Scarf,Necklace,Skirt,,
+94,Beanie,Tank Top,,,
+95,Necklace,Skirt,,,
+96,Clutch,Jeans,Beanie,Jacket,
+97,Necklace,Beanie,,,
+98,Boots,Hoodie,Tank Top,Sneakers,
+99,Jeans,Skirt,Jacket,,
+100,Beanie,Bracelet,Hoodie,,
+101,Beanie,Jeans,T-shirt,Leggings,Sneakers
+102,Hat,Shorts,Bracelet,Clutch,
+103,Jeans,Sneakers,Clutch,Leggings,Jacket
+104,Skirt,,,,
+105,Dress,Hoodie,Clutch,,
+106,Tank Top,Boots,Heels,Bracelet,
+107,Sneakers,Earrings,Skirt,Boots,Hoodie
+108,Sweatshirt,,,,
+109,Sneakers,,,,
+110,Scarf,Necklace,T-shirt,Skirt,Sneakers
+111,Bracelet,Sweatshirt,Jacket,Clutch,Beanie
+112,Hoodie,Heels,Beanie,,
+113,Necklace,,,,
+114,Leggings,,,,
+115,Clutch,Sneakers,Sweatshirt,Skirt,Hoodie
+116,Sweatshirt,Earrings,Scarf,,
+117,Hoodie,Leggings,Scarf,,
+118,Dress,Sweatshirt,,,
+119,Necklace,Heels,,,
+120,Leggings,Beanie,Heels,,
+121,Hat,Tank Top,,,
+122,Clutch,Heels,T-shirt,,
+123,Hat,Leggings,,,
+124,Sweatshirt,Jacket,Heels,Boots,Clutch
+125,Leggings,Boots,Sneakers,Necklace,
+126,T-shirt,Shorts,Sweatshirt,Leggings,Boots
+127,Clutch,,,,
+128,Boots,Earrings,Dress,,
+129,Tank Top,,,,
+130,Clutch,Earrings,Tank Top,Hoodie,T-shirt
+131,T-shirt,Sweatshirt,Bracelet,Leggings,Skirt
+132,Jeans,Scarf,Sneakers,,
+133,Necklace,Skirt,Scarf,Heels,
+134,Heels,T-shirt,,,
+135,Shorts,Beanie,,,
+136,Scarf,Dress,Hat,Boots,Skirt
+137,Dress,Beanie,,,
+138,Scarf,Leggings,Jacket,Earrings,
+139,T-shirt,Jeans,Sweatshirt,,
+140,Scarf,Heels,Beanie,Bracelet,Jacket
+141,Leggings,T-shirt,,,
+142,Jeans,Heels,Bracelet,Sneakers,Sweatshirt
+143,Shorts,Sneakers,Necklace,Sweatshirt,
+144,Dress,,,,
+145,Jacket,,,,
+146,Tank Top,Jacket,Necklace,Clutch,Heels
+147,Jacket,Bracelet,Leggings,Clutch,Shorts
+148,Sneakers,Jeans,Jacket,T-shirt,Beanie
+149,Dress,Sweatshirt,,,
