@@ -3,52 +3,93 @@ from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.metrics.pairwise import cosine_similarity
 import pandas as pd
 import pickle
+from flask_cors import CORS
+import json
+import numpy as np
+from openai import OpenAI
 
 app = Flask(__name__)
+CORS(app)
 
 
 product_dict = pickle.load(open('products.pkl', 'rb'))
 productdata = pd.DataFrame(product_dict)
-
 tfidf_vectorizer = TfidfVectorizer()
 tfidf_matrix = tfidf_vectorizer.fit_transform(productdata['title'])
 
 cosine_sim = cosine_similarity(tfidf_matrix, tfidf_matrix)
 
+
 def recommended(select_product_name):
- 
     select_product_tfidf = tfidf_vectorizer.transform([select_product_name])
     sim_scores = cosine_similarity(select_product_tfidf, tfidf_matrix)
     # Get indices of top similar products
-    indices = sim_scores.argsort()[0][-4:-1][::-1]  # Get top 3 similar products (excluding itself)
+    # Get top 3 similar products (excluding itself)
+    indices = sim_scores.argsort()[0][-4:-1][::-1]
     recommendations = productdata.iloc[indices]
+    recommendations['discount'] = recommendations['discount'].replace(
+        np.NaN, None)
+    recommendations['original_price'] = recommendations['original_price'].replace(
+        np.NaN, None)
     return recommendations.to_dict(orient='records')
+
+
+client = OpenAI()
+
+instructionMessage = {
+    "role": "system",
+    "content": "You are working as a recommendation system. I will give you the title of a product, and you have to recommend 10 complimentary products based on that. Do not give brand name along with response, only give general product name or category. No need for any kind of explanation and instructions. Give only a string of products separated by comma. Do not give number or new line character to product.",
+}
+
+
+def handle_post_request(title):
+    res = []
+    try:
+        message = {"role": "system", "content": title}
+
+        completion = client.chat.completions.create(
+            model="gpt-3.5-turbo", messages=[instructionMessage, message]
+        )
+        res.append(completion.choices[0].message.content)
+        return res
+
+    except Exception as e:
+        print("Error handling POST request:", e)
+        return {"error": "Internal Server Error"}
+
 
 @app.route('/recommend', methods=['POST'])
 def recommend():
     data = request.get_json()
     titles = data['title']
-    if(len(data['title'])==0):
-        titles=productdata['title']
+    all_recommendations = []
+    json_recommendations = []
+    for title in titles:
+        recommendation = recommended(title)
+        all_recommendations.extend(recommendation)
+    json_recommendations = []
+    for rec in all_recommendations:
+        try:
+            json_recommendations.append(rec)
+        except json.JSONDecodeError:
+            # If the string is not valid JSON, just append it as is
+            json_recommendations.append('rec')
 
-        #titles=[
-        #        "Fire-Boltt Ninja Call Pro Plus 1.83\" Smart Watch with Bluetooth Calling, AI Voice Assistance, 100 Sports Modes IP67 Rating, 240 * 280 Pixel High Resolution",
-        #        "Forbuz Monster Truck Toy for Kids, Amazing Toys, 360 De...",
-        #        "Casual Shirt for Men|| Shirt for Men|| Men Stylish Shirt || Men Printed Shirt (Patta)",
-        #        "Casual Shirt for Men|| Shirt for Men|| Men Stylish Shirt || Men Printed Shirt (Mistry)",
-        #        "Maizic Smarthome Studio Classy Dynamic Microphone with ...",
-        #        "Sounce Spiral Charger 12 Pcs Cable Protector Data Cable Saver Charging Cord Protective Cable Cover Headphone MacBook Laptop Earphone Cell Phone Set of 3",
-        #        "Aarna Monster truck 360 Degree Stunt car with Rubber ty...",
-        #        "TrueBucks Cactus Talking Toy Dancing Cactus Repeats Wha...",
-        #        "Ipad air m1",
-        #        "Apple iPad Air (5th gen) 64 GB ROM 10.9 Inch with Wi-Fi+5G (space Grey)",
-        #        "Apple iPad Air (5th Generation): with M1 chip, 27.69 cm (10.9″) Liquid Retina Display, 64GB, Wi-Fi 6, 12MP front/12MP Back Camera, Touch ID, All-Day Battery Life – Space Gray",
-        #        "Apple iPad Air (5th Generation): with M1 chip, 27.69 cm (10.9″) Liquid Retina Display, 256GB, Wi-Fi 6, 12MP front/12MP Back Camera, Touch ID, All-Day Battery Life – Space Gray",
-        #        "Women Polyester Blend Solid Trousers",
-        #        "wonderchef grinder"
-        #    ]
-    all_recommendations = [recommended(title) for title in titles]
-    return jsonify(recommendations=all_recommendations)
-    
-if __name__ == '__main__':
+    return jsonify(json_recommendations)
+
+
+@app.route("/complementary", methods=["POST"])
+def recommendations():
+    try:
+        data = request.get_json()
+        title = data["title"]
+        result = handle_post_request(title)
+        return jsonify(result), 200
+
+    except Exception as e:
+        print("Error:", e)
+        return jsonify({"error": "Bad Request"}), 400
+
+
+if __name__ == '_main_':
     app.run(debug=True)
