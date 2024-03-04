@@ -72,7 +72,6 @@ def recommend():
         try:
             json_recommendations.append(rec)
         except json.JSONDecodeError:
-            # If the string is not valid JSON, just append it as is
             json_recommendations.append('rec')
 
     return jsonify(json_recommendations)
